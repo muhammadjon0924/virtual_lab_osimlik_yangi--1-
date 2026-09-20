@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Virtual Lab Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">
+    <span>⚗</span>
+    <div>
+      <b>Virtual Lab <i>PRO</i></b>
+      <small>Interaktiv ilmiy laboratoriya</small>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#dashboard">Bosh sahifa</a>
+    <a href="#experiments">Tajribalar</a>
+    <a href="#reports">Hisobot</a>
+  </nav>
+
+  <div class="headright">
+    <span class="live">● SIMULYATSIYA</span>
+    <button id="theme" class="iconbtn">◐</button>
+  </div>
+</header>
+
+<main>
+
+<section class="welcome" id="dashboard">
+  <div>
+    <div class="kicker">RAQAMLI TA’LIM MUHITI</div>
+
+    <h1>
+      Ilmni sinab ko‘r.<br>
+      <em>Natijani o‘zing kashf et.</em>
+    </h1>
+
+    <p>
+      O‘zgaruvchilarni boshqaring, tajribalarni taqqoslang
+      va ilmiy xulosa chiqaring.
+    </p>
+
+    <a class="cta" href="#experiments">
+      Laboratoriyaga kirish <b>→</b>
+    </a>
+  </div>
+
+  <div class="welcome-art">
+    <div class="ring">⚛</div>
+    <span class="bubble b1">H₂O</span>
+    <span class="bubble b2">λ</span>
+    <span class="bubble b3">✦</span>
+  </div>
+</section>
+
+<div class="stats">
+  <div>
+    <span>🧪</span>
+    <div>
+      <small>Mavjud tajribalar</small>
+      <b>07</b>
+    </div>
+  </div>
+
+  <div>
+    <span>📈</span>
+    <div>
+      <small>Bajarilgan tajribalar</small>
+      <b id="doneCount">0</b>
+    </div>
+  </div>
+
+  <div>
+    <span>🎯</span>
+    <div>
+      <small>Oxirgi natija</small>
+      <b id="lastScore">—</b>
+    </div>
+  </div>
+
+  <div>
+    <span>⏱</span>
+    <div>
+      <small>Faol laboratoriya</small>
+      <b id="activeName">O‘simlik</b>
+    </div>
+  </div>
+</div>
+
+<section id="experiments" class="layout">
+
+<aside class="menu">
+  <h3>Laboratoriya</h3>
+  <p class="muted">MAVZUNI TANLANG</p>
+
+  <button class="navitem selected" data-id="plant">
+    <span>🌱</span>
+    <div>
+      <b>O‘simlik o‘sishi</b>
+      <small>Biologiya</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="heat">
+    <span>🌡️</span>
+    <div>
+      <b>Suv harorati</b>
+      <small>Fizika</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="light">
+    <span>💡</span>
+    <div>
+      <b>Yorug‘lik</b>
+      <small>Fizika</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="seed">
+    <span>🌾</span>
+    <div>
+      <b>Urug‘ unishi</b>
+      <small>Biologiya</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="magnet">
+    <span>🧲</span>
+    <div>
+      <b>Magnit maydoni</b>
+      <small>Fizika</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="density">
+    <span>🧊</span>
+    <div>
+      <b>Zichlik tajribasi</b>
+      <small>Kimyo / Fizika</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <button class="navitem" data-id="sound">
+    <span>🔊</span>
+    <div>
+      <b>Tovush to‘lqini</b>
+      <small>Fizika</small>
+    </div>
+    <span class="arr">›</span>
+  </button>
+
+  <div class="tip">
+    <b>💡 Tadqiqotchi maslahati</b>
+    <p>
+      Bir safar faqat bitta parametrni o‘zgartiring.
+      Shunda sabab va natijani aniqroq solishtirasiz.
+    </p>
+  </div>
+</aside>
+
+<div class="mainlab">
+
+  <div class="labtitle">
+    <div>
+      <div class="kicker" id="category">
+        BIOLOGIYA / TAJRIBA 01
+      </div>
+
+      <h2 id="title">O‘simlik o‘sishi</h2>
+
+      <p id="desc">
+        Suv, yorug‘lik va harorat o‘simlik rivojlanishiga
+        qanday ta’sir qiladi?
+      </p>
+    </div>
+
+    <button class="outline" id="reset">
+      ↻ Qayta boshlash
+    </button>
+  </div>
+
+  <div class="labgrid">
+
+    <div class="visual panel">
+
+      <div class="visualtop">
+        <span>TAJRIBA MAYDONI</span>
+        <span class="pill">● LIVE MODEL</span>
+      </div>
+
+      <div class="scene" id="scene">
+
+        <div class="sun" id="sun">☀</div>
+
+        <div class="plant" id="plant">
+          <div class="stem"></div>
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="leaf l3"></div>
+          <div class="pot"></div>
+        </div>
+
+        <div class="floor"></div>
+
+        <div class="scenehint" id="scenehint">
+          O‘simlik holati: yaxshi
+        </div>
+
+      </div>
+
+      <div class="visualfoot">
+        <span>MODEL HOLATI</span>
+        <b id="status">Barqaror</b>
+      </div>
+
+    </div>
+
+    <div class="panel settings">
+
+      <div class="panelhead">
+        <div>
+          <h3>Parametrlar</h3>
+          <p>Qiymatlarni o‘zgartiring</p>
+        </div>
+
+        <span class="gear">⚙</span>
+      </div>
+
+      <div id="sliders"></div>
+
+      <div class="result">
+
+        <div class="resulticon">↗</div>
+
+        <div>
+          <small>HISOBLANGAN NATIJA</small>
+          <strong id="result">
+            O‘sish indeksi: 82%
+          </strong>
+          <p id="resultdesc">
+            Sharoitlar qulay.
+          </p>
+        </div>
+
+      </div>
+
+      <button class="cta full" id="save">
+        Natijani hisobotga saqlash <b>＋</b>
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="bottomgrid">
+
+    <div class="panel chartpanel">
+
+      <div class="panelhead">
+        <div>
+          <h3>Natijalar grafigi</h3>
+          <p>
+            Har bir tajriba saqlanganda yangi nuqta qo‘shiladi
+          </p>
+        </div>
+
+        <span class="legend">● Natija</span>
+      </div>
+
+      <div class="chart" id="chart">
+
+        <div class="chartgrid">
+          <span>100</span>
+          <span>75</span>
+          <span>50</span>
+          <span>25</span>
+          <span>0</span>
+        </div>
+
+        <svg
+          viewBox="0 0 600 190"
+          preserveAspectRatio="none"
+          id="chartSvg"
+        >
+
+          <polyline
+            id="line"
+            points=""
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></polyline>
+
+          <g id="dots"></g>
+
+        </svg>
+
+      </div>
+
+      <div class="chartfoot">
+        <span>Saqlangan natijalar</span>
+        <b id="chartCount">0 ta</b>
+      </div>
+
+    </div>
+
+    <div class="panel learn">
+
+      <div class="kicker">
+        O‘RGANISH MARKAZI
+      </div>
+
+      <h3 id="learnTitle">
+        Ilmiy izoh
+      </h3>
+
+      <p id="learnText"></p>
+
+      <div class="quizbox">
+
+        <div>
+          <b>🧠 Bilimingizni tekshiring</b>
+          <small>Bir savol · darhol javob</small>
+        </div>
+
+        <button
+          class="outline"
+          id="quizToggle"
+        >
+          Testni ochish →
+        </button>
+
+      </div>
+
+      <div id="quiz" hidden>
+
+        <p id="question"></p>
+
+        <div
+          id="answers"
+          class="answers"
+        ></div>
+
+        <p
+          id="feedback"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<section id="reports" class="reports">
+
+  <div>
+    <div class="kicker">
+      TAJRIBA JURNALI
+    </div>
+
+    <h2>
+      Saqlangan natijalar
+    </h2>
+
+    <p>
+      O‘zingiz bajargan tajribalarni shu yerda ko‘ring.
+    </p>
+  </div>
+
+  <button
+    class="outline"
+    id="clear"
+  >
+    Jurnalni tozalash
+  </button>
+
+  <div class="reporttable panel">
+
+    <div class="reportrow reporthead">
+      <span>#</span>
+      <span>Tajriba</span>
+      <span>Parametrlar</span>
+      <span>Natija</span>
+      <span>Vaqt</span>
+    </div>
+
+    <div id="reportsList">
+
+      <div class="empty">
+        Hozircha natija yo‘q.
+        Tajribani bajaring va saqlang.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <b>⚗ Virtual Lab Pro</b>
+  <span>O‘rgan · Sinab ko‘r · Xulosa qil</span>
+  <small>
+    O‘quv simulyatsiyasi —
+    natijalar haqiqiy laboratoriya o‘lchovi emas.
+  </small>
+</footer>
+
+<div
+  id="toast"
+  role="status"
+></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
